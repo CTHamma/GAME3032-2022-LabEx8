@@ -11358,6 +11358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd241baaf70e0f46b1a75a92e746f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: Overworld
 --- !u!1 &1232960856
 GameObject:
   m_ObjectHideFlags: 0

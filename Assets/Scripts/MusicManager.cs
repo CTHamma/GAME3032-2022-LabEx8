@@ -24,6 +24,8 @@ public class MusicManager : MonoBehaviour
             if(instance == null)
             {
                 instance = new MusicManager();
+
+                //SceneManager.sceneLoaded += instance.OnSceneLoaded;
             }
             return instance;
         }
@@ -63,6 +65,8 @@ public class MusicManager : MonoBehaviour
         {
             DontDestroyOnLoad(original);
         }
+
+        //SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     /*Add a method for:
@@ -130,13 +134,18 @@ public class MusicManager : MonoBehaviour
         oldTrack.volume = 1.0f;
     }
 
-    //void OnSceneLoaded(SceneChange newScene, LoadSceneMode loadMode)
-    //{
-    //    if(newScene.name = "Town")
-    //    {
-    //        CrossFadeTo(TrackID.Town)
-    //    }
-    //}
+    void OnSceneLoaded(SceneChange newScene, LoadSceneMode loadMode)
+    {
+        if (newScene.name == "Overworld")
+        {
+            CrossFadeTo(TrackID.TOWN);
+        }
+
+        if (newScene.name == "BattleScene")
+        {
+            CrossFadeTo(TrackID.WILD);
+        }
+    }
 
     // Update is called once per frame
     void Update()
