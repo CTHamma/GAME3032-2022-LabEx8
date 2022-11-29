@@ -23,7 +23,7 @@ public class MusicManager : MonoBehaviour
         {
             if(instance == null)
             {
-                instance = new MusicManager();
+                instance = FindObjectOfType<MusicManager>();
 
                 //SceneManager.sceneLoaded += instance.OnSceneLoaded;
             }
@@ -33,11 +33,11 @@ public class MusicManager : MonoBehaviour
         private set { instance = value;  }
     }
 
-    [Tooltip("One track for crossfading. The ordr is arbritrary")]
+    [Tooltip("One track for crossfading. The order is arbritrary")]
     [SerializeField]
     AudioSource musicSource1;
 
-    [Tooltip("Another track for crossfading. The ordr is arbritrary")]
+    [Tooltip("Another track for crossfading. The order is arbritrary")]
     [SerializeField]
     AudioSource musicSource2;
 
@@ -55,9 +55,10 @@ public class MusicManager : MonoBehaviour
         foreach(MusicManager manager in managers)
         {
             //
-            if(manager != original)
+            if(manager != instance)
             {
                 Destroy(manager.gameObject);
+                Debug.Log("Destroyed");
             }
         }
 
