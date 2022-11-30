@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
-    public string sceneName;
     public void SwitchScene()
     {
-        SceneManager.LoadScene(sceneName); //Switch to scene specified in name
+        SceneManager.LoadScene(1); //Switch back to the overworld scene
     }
 }

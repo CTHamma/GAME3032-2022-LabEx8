@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class PlayerCharacterMovement : MonoBehaviour
 {
-    public UnityEvent<Scene> onTransportToNewScene;
 
     [SerializeField]
     [Range(0,1000)] //This means that the MoveSpeed can be in range 0-1000
